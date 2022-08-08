@@ -14,7 +14,7 @@ public class TaskMgr {
     public static final int HEAVY_OPERATION = 2;//重量级操作
     public static final int LIGHT_OPERATION = 3;//轻量级操作
 
-    private static int maxSize = 16;// >1
+    private static int maxSize = 32;// >1
 
     public static final Handler HANDLER = new Handler(Looper.getMainLooper());
 
@@ -22,9 +22,9 @@ public class TaskMgr {
     private static ArrayBlockingQueue<Runnable> heavyQueue = new ArrayBlockingQueue<Runnable>(maxSize);
     private static ArrayBlockingQueue<Runnable> lightQueue = new ArrayBlockingQueue<Runnable>(maxSize);
 
-    private static ThreadPoolExecutor ioExecutor = new ThreadPoolExecutor(2, 4, 2L, TimeUnit.SECONDS, ioQueue);
-    private static ThreadPoolExecutor heavyExecutor = new ThreadPoolExecutor(2, 4, 2L, TimeUnit.SECONDS, heavyQueue);
-    private static ThreadPoolExecutor lightExecutor = new ThreadPoolExecutor(2, 4, 2L, TimeUnit.SECONDS, lightQueue);
+    private static ThreadPoolExecutor ioExecutor = new ThreadPoolExecutor(2, 4, 5L, TimeUnit.SECONDS, ioQueue);
+    private static ThreadPoolExecutor heavyExecutor = new ThreadPoolExecutor(2, 4, 5L, TimeUnit.SECONDS, heavyQueue);
+    private static ThreadPoolExecutor lightExecutor = new ThreadPoolExecutor(2, 4, 5L, TimeUnit.SECONDS, lightQueue);
 
     private TaskMgr() {
     }

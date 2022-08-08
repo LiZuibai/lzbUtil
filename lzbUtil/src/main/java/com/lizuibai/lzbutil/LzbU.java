@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.UUID;
 
-public class U {
+public class LzbU {
 
     public static boolean isDebug = false;
     public static Context CONTEXT;
@@ -34,18 +34,33 @@ public class U {
         return list == null || list.isEmpty();
     }
 
-    public static boolean isEmpty(Map list) {
-        return list == null || list.isEmpty();
+    public boolean isEmpty(Map map) {
+        return map == null || map.isEmpty();
+    }
+
+    public boolean isEmpty(String[] arr) {
+        return arr == null || arr.length == 0;
+    }
+
+    public boolean isEmpty(int[] arr) {
+        return arr == null || arr.length == 0;
+    }
+
+    public boolean isEmpty(float[] arr) {
+        return arr == null || arr.length == 0;
+    }
+
+    public boolean isEmpty(double[] arr) {
+        return arr == null || arr.length == 0;
+    }
+
+    public boolean isEmpty(long[] arr) {
+        return arr == null || arr.length == 0;
     }
 
     public static boolean isEmpty(Object[] objects) {
         return objects == null || objects.length == 0;
     }
-
-    public static boolean isEmpty(int[] objects) {
-        return objects == null || objects.length == 0;
-    }
-
 
     public static void close(Closeable closeable) {
         if (closeable != null) {

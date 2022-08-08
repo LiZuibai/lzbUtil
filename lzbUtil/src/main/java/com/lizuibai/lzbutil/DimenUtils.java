@@ -20,22 +20,22 @@ public class DimenUtils {
     }
 
     public static float dp2px(float dp) {
-        return U.CONTEXT.getResources().getDisplayMetrics().density * dp;
+        return LzbU.CONTEXT.getResources().getDisplayMetrics().density * dp;
     }
 
     public static int dp2pxInt(float dp) {
-        return (int) (U.CONTEXT.getResources().getDisplayMetrics().density * dp);
+        return (int) (LzbU.CONTEXT.getResources().getDisplayMetrics().density * dp);
     }
 
     public static int getDimen(int dimen) {
-        return U.CONTEXT.getResources().getDimensionPixelOffset(dimen);
+        return LzbU.CONTEXT.getResources().getDimensionPixelOffset(dimen);
     }
 
     public static int getScreenHeight() {
-        return U.CONTEXT.getResources().getDisplayMetrics().heightPixels;
+        return LzbU.CONTEXT.getResources().getDisplayMetrics().heightPixels;
     }
 
     public static int getScreenWidth() {
-        return U.CONTEXT.getResources().getDisplayMetrics().widthPixels;
+        return LzbU.CONTEXT.getResources().getDisplayMetrics().widthPixels;
     }
 }

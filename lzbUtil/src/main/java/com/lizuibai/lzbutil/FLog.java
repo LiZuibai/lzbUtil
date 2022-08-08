@@ -13,12 +13,12 @@ import java.util.concurrent.Executors;
 public class FLog {
 
     private static Executor EXECUTOR = Executors.newSingleThreadExecutor();
-    private static File dir = new File(U.CONTEXT.getExternalFilesDir(null), "onlineLog");
+    private static File dir = new File(LzbU.CONTEXT.getExternalFilesDir(null), "onlineLog");
 
     private static Object writeLock = new Object();
 
     private static SimpleDateFormat logFileFormatter = new SimpleDateFormat("yy.MM.dd", Locale.US);
-    private static boolean IS_DEBUG = U.isDebug;
+    private static boolean IS_DEBUG = LzbU.isDebug;
     private static String logPath = StorageUtil.getCacheRootDir() + "/log";
     private static String processName = "Main";
     private static long todayTick = 0L;
@@ -178,7 +178,7 @@ public class FLog {
                     String logFileString = logPath + processName + dayString + ".txt";
                     File logFile = new File(logFileString);
                     if (writer != null) {
-                        U.close(writer);
+                        LzbU.close(writer);
                     }
                     if (!logFile.exists()) {
                         logFile.createNewFile();

@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 
 public class Sp {
 
-    private static SharedPreferences mSp = U.CONTEXT.getSharedPreferences("common", Context.MODE_PRIVATE);
+    private static SharedPreferences mSp = LzbU.CONTEXT.getSharedPreferences("common", Context.MODE_PRIVATE);
 
     public static String getValue(String key, String def) {
         if (key != null) {

@@ -4,7 +4,7 @@ import android.util.Log;
 
 public class L {
 
-    private static boolean isShowLog = U.isDebug;
+    private static boolean isShowLog = LzbU.isDebug;
     private static boolean writeFileLog = false;
     private static String TAG = "LZB_";
 

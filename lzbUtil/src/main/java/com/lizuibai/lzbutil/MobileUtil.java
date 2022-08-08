@@ -19,7 +19,7 @@ public class MobileUtil {
 
     public static boolean isNetworkConnected() {
         try {
-            ConnectivityManager mConnectivityManager = (ConnectivityManager) U.CONTEXT
+            ConnectivityManager mConnectivityManager = (ConnectivityManager) LzbU.CONTEXT
                     .getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo mNetworkInfo = mConnectivityManager.getActiveNetworkInfo();
             if (mNetworkInfo != null) {
@@ -94,7 +94,7 @@ public class MobileUtil {
             return pkgVersionCode;
         }
         try {
-            PackageInfo info = U.CONTEXT.getPackageManager().getPackageInfo(U.CONTEXT.getPackageName(), 0);
+            PackageInfo info = LzbU.CONTEXT.getPackageManager().getPackageInfo(LzbU.CONTEXT.getPackageName(), 0);
             if (info != null) {
                 pkgVersionCode = info.versionCode;
                 pkgVersionName = info.versionName;
@@ -109,7 +109,7 @@ public class MobileUtil {
     public static String getPkgVersionName() {
         if (TextUtils.isEmpty(pkgVersionName)) {
             try {
-                PackageInfo info = U.CONTEXT.getPackageManager().getPackageInfo(U.CONTEXT.getPackageName(), 0);
+                PackageInfo info = LzbU.CONTEXT.getPackageManager().getPackageInfo(LzbU.CONTEXT.getPackageName(), 0);
                 if (info != null) {
                     pkgVersionCode = info.versionCode;
                     pkgVersionName = info.versionName;
@@ -126,7 +126,7 @@ public class MobileUtil {
     public static String getPkgName() {
         if (TextUtils.isEmpty(pkgName)) {
             try {
-                PackageInfo info = U.CONTEXT.getPackageManager().getPackageInfo(U.CONTEXT.getPackageName(), 0);
+                PackageInfo info = LzbU.CONTEXT.getPackageManager().getPackageInfo(LzbU.CONTEXT.getPackageName(), 0);
                 if (info != null) {
                     pkgVersionCode = info.versionCode;
                     pkgVersionName = info.versionName;
@@ -145,7 +145,7 @@ public class MobileUtil {
     public static synchronized String getImei() {
         if (imei == null) {
             try {
-                Context context = U.CONTEXT;
+                Context context = LzbU.CONTEXT;
                 TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
                 String deviceId = null;
                 if (tm != null) {
@@ -169,7 +169,7 @@ public class MobileUtil {
         if (androidId == null) {
             try {
                 // Try to get the ANDROID_ID
-                String aid = Settings.Secure.getString(U.CONTEXT.getContentResolver(), Settings.Secure.ANDROID_ID);
+                String aid = Settings.Secure.getString(LzbU.CONTEXT.getContentResolver(), Settings.Secure.ANDROID_ID);
                 // Try to avoid NullPointerException when the _androidId is null
                 // if (aid != null) {
                 // aid = aid.toLowerCase();

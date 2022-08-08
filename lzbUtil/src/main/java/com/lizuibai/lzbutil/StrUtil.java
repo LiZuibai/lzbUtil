@@ -52,11 +52,11 @@ public class StrUtil {
     }
 
     public static String getString(int strId) {
-        return U.CONTEXT.getString(strId);
+        return LzbU.CONTEXT.getString(strId);
     }
 
     public static String getString(int strId, Object... args) {
-        return U.CONTEXT.getString(strId, args);
+        return LzbU.CONTEXT.getString(strId, args);
     }
 
     public static String stream2String(InputStream inputStream) {
@@ -76,7 +76,7 @@ public class StrUtil {
             e.printStackTrace();
         } finally {
             if (needClose) {
-                U.close(inputStream);
+                LzbU.close(inputStream);
             }
         }
         return null;

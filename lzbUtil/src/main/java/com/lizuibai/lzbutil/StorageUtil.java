@@ -20,7 +20,7 @@ public class StorageUtil {
     }
 
     public static String setCacheRootDir() {
-        setCacheRootDir(U.CONTEXT, mUseExternalCache, true);
+        setCacheRootDir(LzbU.CONTEXT, mUseExternalCache, true);
         return mCacheRootDir;
     }
 
@@ -47,17 +47,17 @@ public class StorageUtil {
 
         if (appCacheDir == null) {
             //if (Version.hasKitKat()) {
-            if ((appCacheDir = U.CONTEXT.getExternalFilesDir(null)) == null) {
+            if ((appCacheDir = LzbU.CONTEXT.getExternalFilesDir(null)) == null) {
                 appCacheDir = new File(new File(Environment.getExternalStorageDirectory(), "Android"),
                         "data");
-                appCacheDir = new File(new File(appCacheDir, U.CONTEXT.getPackageName()),
+                appCacheDir = new File(new File(appCacheDir, LzbU.CONTEXT.getPackageName()),
                         "files");
             }
             //}
         }
 
         if (appCacheDir == null) {
-            appCacheDir = new File(Environment.getExternalStorageDirectory(), U.CONTEXT.getPackageName());
+            appCacheDir = new File(Environment.getExternalStorageDirectory(), LzbU.CONTEXT.getPackageName());
         }
 
         return appCacheDir;
@@ -100,7 +100,7 @@ public class StorageUtil {
     }
 
     public static String getInternalCacheDir() {
-        File appCacheDir = getInternalCacheDir(U.CONTEXT);
+        File appCacheDir = getInternalCacheDir(LzbU.CONTEXT);
         String path = (appCacheDir != null ? appCacheDir.getAbsolutePath() : "");
         return appendWithSeparator(path);
     }

@@ -28,7 +28,7 @@ public class DrawableUtil {
             public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
                 Drawable[] drawables = tv.getCompoundDrawables();
                 tv.removeOnLayoutChangeListener(this);
-                if (U.isEmpty(drawables)) {
+                if (LzbU.isEmpty(drawables)) {
                     return;
                 }
                 int padding = tv.getCompoundDrawablePadding();
